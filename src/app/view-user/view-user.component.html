@@ -1,0 +1,54 @@
+<div class="container">
+    <table class="table table-stripped">
+        <tbody>
+            <tr *ngFor="let data of userData">
+                <label>Name</label><br />
+                <td><input type="text" class="form-control" #name [value]="data.name"/>
+                    <label>email</label><br />
+                    <td><input type="text" class="form-control" #email [value]="data.email"/>
+                        <label>Profile</label><br />
+                        <td><input type="text" class="form-control" #pro [value]="data.profile"/></td>
+                        <td>
+                            <button class="btn btn-primary"(click)="submitForm(name.value,email.value,pro.value)">Submit</button>
+                        </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+
+
+
+    
+
+
+  
+
+    <div class="container">
+         <!--   <table class="table table-trapped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>email</th>
+                        <th>profile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of userData">
+                        <td> {{data.name}}</td>
+                        <td> {{data.email}}</td>
+                        <td> {{data.profile}}</td>
+                        <td><button class="btn btn-primary"(click)="getCurrentUser(data)">Get User</button></td>
+                        <td><button class="btn btn-primary"(click)="getCurrentUser(form.value)">Get User</button></td>
+                      
+                     
+                    </tr>
+                </tbody>
+            </table>-->
+            </div>
+
+
+
+            
+         
+

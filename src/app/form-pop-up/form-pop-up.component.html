@@ -1,0 +1,205 @@
+<form [formGroup]="form" class="normal-form" (ngSubmit)="submit()">
+    <!-- <mat-grid-list cols="2">
+        <mat-grid-tile>
+
+            <mat-form-field class="example-full-width">
+                <input matInput formControlName="$key" placeholder="Key">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Campaign Name" formControlName="campaignName">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Favorite food" value="Sushi">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Favorite food" value="Sushi">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Country</mat-label>
+                <mat-select formControlName="country">
+                    <mat-option *ngFor="let c of countries" [value]="c">
+                        {{c}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-grid-tile>
+    </mat-grid-list> -->
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="example-full-width">
+                <input matInput formControlName="$key" placeholder="Publisher">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Campaign Name" formControlName="campaignName">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Product type" formControlName="productType">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Site Name" value="">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Message" value="">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="CallToAction" value="">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="CreativeDelivery" value="">
+            </mat-form-field>
+
+         
+
+            <mat-form-field class="example-full-width">
+                <input formControlName="LaunchDate" matInput [matDatepicker]="picker" placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+               </mat-form-field>
+
+        
+        </div>   
+
+
+
+        <div class="col">
+            <mat-form-field>
+                <mat-label>Country</mat-label>
+                <mat-select formControlName="country">
+                    <mat-option *ngFor="let c of countries" [value]="c">
+                        {{c}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Medium</mat-label>
+                <mat-select formControlName="Medium">
+                    <mat-option *ngFor="let m of Medium" [value]="m">
+                        {{m}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Brand</mat-label>
+                <mat-select formControlName="Brand">
+                    <mat-option *ngFor="let b of Brand" [value]="b">
+                        {{b}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Screen</mat-label>
+                <mat-select formControlName="Screen">
+                    <mat-option *ngFor="let s of Screen" [value]="s">
+                        {{s}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Placement</mat-label>
+                <mat-select formControlName="Placement">
+                    <mat-option *ngFor="let p of Placement" [value]="p">
+                        {{p}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Targeting</mat-label>
+                <mat-select formControlName="Targeting">
+                    <mat-option *ngFor="let t of Targeting" [value]="t">
+                        {{t}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Buy Type</mat-label>
+                <mat-select formControlName="BuyType">
+                    <mat-option *ngFor="let bt of BuyType" [value]="bt">
+                        {{bt}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>BannerType</mat-label>
+                <mat-select formControlName="BannerType">
+                    <mat-option *ngFor="let bnt of BannerType" [value]="bnt">
+                        {{bnt}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>UnitSize</mat-label>
+                <mat-select formControlName="UnitSize">
+                    <mat-option *ngFor="let u of UnitSize" [value]="u">
+                        {{u}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Language</mat-label>
+                <mat-select formControlName="Language">
+                    <mat-option *ngFor="let l of Language" [value]="l">
+                        {{l}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Base URL</mat-label>
+                <mat-select formControlName="BaseURL">
+                    <mat-option *ngFor="let bu of BaseURL" [value]="bu">
+                        {{bu}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Adveriser Name</mat-label>
+                <mat-select formControlName="AdvertiserName">
+                    <mat-option *ngFor="let an of AdvertiserName" [value]="an">
+                        {{an}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Placement Name</mat-label>
+                <mat-select formControlName="PlacementName">
+                    <mat-option *ngFor="let pn of PlacementName" [value]="pn">
+                        {{pn}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Creative Name</mat-label>
+                <mat-select formControlName="CreativeName">
+                    <mat-option *ngFor="let cn of CreativeName" [value]="cn">
+                        {{cn}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+    </div>
+
+    <button type="submit" mat-button color="primary">Submit</button>
+
+</form>

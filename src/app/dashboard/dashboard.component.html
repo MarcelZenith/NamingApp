@@ -1,0 +1,179 @@
+<mat-tab-group>
+    <mat-tab label="Campaigns"> Campaign Login successfull.
+        <a routerLink="/">Go back</a>
+        <app-form-pop-up (addEntry)="onentry($event)"></app-form-pop-up>
+        
+<div *ngIf="dataSource">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="$key">
+              <th mat-header-cell *matHeaderCellDef> publisher </th>
+              <td mat-cell *matCellDef="let element"> {{element.$key}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="campaignName">
+              <th mat-header-cell *matHeaderCellDef> campaign Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.campaignName}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="productType">
+              <th mat-header-cell *matHeaderCellDef>product Type </th>
+              <td mat-cell *matCellDef="let element"> {{element.productType}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="country">
+              <th mat-header-cell *matHeaderCellDef> country </th>
+              <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+            </ng-container>
+    
+                   <!-- Symbol Column -->
+                   <ng-container matColumnDef="Medium">
+                        <th mat-header-cell *matHeaderCellDef> Medium </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Medium}} </td>
+                      </ng-container>
+    
+                                <!-- Symbol Column -->
+                   <ng-container matColumnDef="SiteName">
+                        <th mat-header-cell *matHeaderCellDef>Site Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.SiteName}} </td>
+                      </ng-container>
+    
+                                               <!-- Symbol Column -->
+                   <ng-container matColumnDef="launchDate">
+                        <th mat-header-cell *matHeaderCellDef>launch Date </th>
+                        <td mat-cell *matCellDef="let element"> {{element.launchDate}} </td>
+                      </ng-container>
+                                                      <!-- Symbol Column -->
+                   <ng-container matColumnDef="Brand">
+                        <th mat-header-cell *matHeaderCellDef>Brand </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Brand}} </td>
+                      </ng-container>
+    
+                                                           <!-- Symbol Column -->
+                   <ng-container matColumnDef="Objective">
+                        <th mat-header-cell *matHeaderCellDef>Objective </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Objective}} </td>
+                      </ng-container>
+           
+                      
+                                                           <!-- Symbol Column -->
+                   <ng-container matColumnDef="Screen">
+                        <th mat-header-cell *matHeaderCellDef>Screen </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Screen}} </td>
+                      </ng-container>
+    
+                                                      <!-- Symbol Column -->
+                   <ng-container matColumnDef="Placement">
+                        <th mat-header-cell *matHeaderCellDef>Placement</th>
+                        <td mat-cell *matCellDef="let element"> {{element.Placement}} </td>
+                      </ng-container>
+    
+                                                           <!-- Symbol Column -->
+                   <ng-container matColumnDef="Targeting">
+                        <th mat-header-cell *matHeaderCellDef>Targeting</th>
+                        <td mat-cell *matCellDef="let element"> {{element.Targeting}} </td>
+                      </ng-container>
+    
+                                                                   <!-- Symbol Column -->
+                   <ng-container matColumnDef="BuyType">
+                        <th mat-header-cell *matHeaderCellDef>Buy Type</th>
+                        <td mat-cell *matCellDef="let element"> {{element.BuyType}} </td>
+                      </ng-container>
+    
+                                                                        <!-- Symbol Column -->
+                   <ng-container matColumnDef="BannerType">
+                        <th mat-header-cell *matHeaderCellDef>Banner Type</th>
+                        <td mat-cell *matCellDef="let element"> {{element.BannerType}} </td>
+                      </ng-container>
+    
+                                                                              <!-- Symbol Column -->
+                   <ng-container matColumnDef="Message">
+                        <th mat-header-cell *matHeaderCellDef>Message</th>
+                        <td mat-cell *matCellDef="let element"> {{element.Message}} </td>
+                      </ng-container>
+    
+                      
+                                                                              <!-- Symbol Column -->
+                   <ng-container matColumnDef="UnitSize">
+                        <th mat-header-cell *matHeaderCellDef>Unit Size</th>
+                        <td mat-cell *matCellDef="let element"> {{element.UnitSize}} </td>
+                      </ng-container>
+    
+                                                                                   <!-- Symbol Column -->
+                   <ng-container matColumnDef="Language">
+                        <th mat-header-cell *matHeaderCellDef>Language</th>
+                        <td mat-cell *matCellDef="let element"> {{element.Language}} </td>
+                      </ng-container>
+    
+                                                                                       <!-- Symbol Column -->
+                   <ng-container matColumnDef="CallToAction">
+                        <th mat-header-cell *matHeaderCellDef>Call To Action</th>
+                        <td mat-cell *matCellDef="let element"> {{element.CallToAction}} </td>
+                      </ng-container>
+    
+                                                                                               <!-- Symbol Column -->
+                   <ng-container matColumnDef="CreativeDelivery">
+                        <th mat-header-cell *matHeaderCellDef>Creative Delivery</th>
+                        <td mat-cell *matCellDef="let element"> {{element.CreativeDelivery}} </td>
+                      </ng-container>
+    
+                                                                                                   <!-- Symbol Column -->
+                   <ng-container matColumnDef="BaseURL">
+                        <th mat-header-cell *matHeaderCellDef>Base URL</th>
+                        <td mat-cell *matCellDef="let element"> {{element.BaseURL}} </td>
+                      </ng-container>
+    
+                                                                                                          <!-- Symbol Column -->
+                   <ng-container matColumnDef="AdvertiserName">
+                        <th mat-header-cell *matHeaderCellDef>Advertiser Name</th>
+                        <td mat-cell *matCellDef="let element"> {{element.AdvertiserName}} </td>
+                      </ng-container>
+    
+                                                                                                                <!-- Symbol Column -->
+                   <ng-container matColumnDef="PlacementName">
+                        <th mat-header-cell *matHeaderCellDef>Placement Name</th>
+                        <td mat-cell *matCellDef="let element"> {{element.PlacementName}} </td>
+                      </ng-container>
+    
+                                                                                                                     <!-- Symbol Column -->
+                   <ng-container matColumnDef="CreativeName">
+                        <th mat-header-cell *matHeaderCellDef>Creative Name</th>
+                        <td mat-cell *matCellDef="let element"> {{element.CreativeName}} </td>
+                      </ng-container>
+    
+    
+    
+    
+            <ng-container matColumnDef="functions">
+                <th mat-header-cell *matHeaderCellDef>  </th>
+                <td mat-cell *matCellDef="let element">
+                    <button (click)="deleteElement(element)">delete</button>
+                </td>
+              </ng-container>
+
+            
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </div>
+    <!-- <button mat-button mat-fab>Add</button> -->
+    </mat-tab>
+
+
+
+
+    
+    <mat-tab label="Admin"> Admin Login successfull.
+        <a routerLink="/">Go back</a>
+         <app-admin>User Management</app-admin> 
+
+    </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,27 @@
+<form [formGroup]="form" class="normal-form" (ngSubmit)="submit()">
+  
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="example-full-width">
+                <input matInput formControlName="$key" placeholder="name">
+            </mat-form-field>
+            
+
+            
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="email" formControlName="email">
+            </mat-form-field>
+
+             <mat-form-field class="example-full-width">
+                <input matInput placeholder="Profile" formControlName="profile">
+            </mat-form-field>
+
+            <td><button class="btn btn-primary" mat-button color="primary"(click)="getCurrentUser(form.value)">Create User</button></td>
+          <!-- <td> <button type="submit" mat-button color="primary">Submit</button></td>-->
+
+             
+           
+
+
+        </div>   
