@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '../../../node_modules/@angular/forms';
+import { UserService } from './user.service';
 
 
 @Component({
@@ -9,10 +10,13 @@ import { FormGroup, FormBuilder, Validators } from '../../../node_modules/@angul
 })
 export class NewUserComponent implements OnInit {
 
-  form: FormGroup;
+  
   @Output("addEntry") addEntry: EventEmitter<any> = new EventEmitter();
+  form: FormGroup;
+  userType: Array<string> = ["admin", "user", "read","write"];
+  message: string;
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private us: UserService) { 
     this.createForm()
   }
 
@@ -23,12 +27,11 @@ export class NewUserComponent implements OnInit {
 
   createForm(){
     this.form = this.fb.group({
-      $key: ["", Validators.required],
-      Name: ["", Validators.required],
-      email: ["", Validators.required],
-      profile: ["", Validators.required],
-   
-     
+      name: [""],
+      email: [""],
+      userType: [""],
+      password: [""],
+      profile: ""
     });
   }
 
@@ -36,14 +39,23 @@ export class NewUserComponent implements OnInit {
     // if(this.form.valid){
       
       this.addEntry.emit(this.form.value);
+      this.us.addUser(this.form.value);
+      this.showMessage("user created");
       this.form.reset();
     // }
   }
 
   getCurrentUser(data) {
     console.log(data);
-  
-    
+  }
+
+
+  showMessage(message) {
+    this.message = message;
+    let that = this;
+    setTimeout(function(){
+      that.message = null;
+    }, 1500)
   }
 
 }

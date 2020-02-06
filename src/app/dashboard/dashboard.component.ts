@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CampaignService } from '../shared/campaign.service';
 import { MatTableDataSource } from '../../../node_modules/@angular/material';
-
+import {MatPaginatorModule, MatPaginator} from '@angular/material/paginator';
+import { UserService } from '../new-user/user.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -10,30 +11,13 @@ import { MatTableDataSource } from '../../../node_modules/@angular/material';
 export class DashboardComponent implements OnInit {
 
   displayedColumns: string[] = [
-    '$key',
-    'campaignName',
-    'productType',
-    'country',
-    'Medium',
-    'SiteName',
-    'launchDate',
      'Brand',
-    'Objective',
-    'Screen', 
-    'Placement',
-    'Targeting',
-    'BuyType',
-    'BannerType',
-    'Message',
-    'UnitSize', 
-    'Language',
-    'CallToAction',
-    'CreativeDelivery',
-    'BaseURL',
-    'AdvertiserName',
-    'PlacementName',
+     'campaignName',
+    '$key',
     'CreativeName',
-   
+    'BaseURL',
+    
+    
     "functions"
   
    
@@ -43,7 +27,8 @@ export class DashboardComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   allData: Array<any>;
 
-  constructor(private service: CampaignService) { }
+
+  constructor(private service: CampaignService, public us: UserService) { }
 
   ngOnInit() {
   }

@@ -25,6 +25,9 @@ import { AdminComponent } from './admin/admin.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import {MatNativeDateModule} from '@angular/material';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { AuthGuard } from './auth.guard';
+
 // import { MatMomentDateModule } from "@angular/material";
   
 
@@ -36,15 +39,18 @@ const appRoutes:Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [ AuthGuard ]
   },
   {
     path: 'ViewUser',
-    component: ViewUserComponent
+    component: ViewUserComponent,
+    canActivate: [ AuthGuard ]
   },
   {
     path: 'NewUser',
-    component: NewUserComponent
+    component: NewUserComponent,
+    canActivate: [ AuthGuard ]
   }
 ]
 
@@ -77,7 +83,10 @@ const appRoutes:Routes = [
     MatSelectModule,
     MatDatepickerModule,
     // MatMomentDateModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatPaginatorModule
+   
+    
  
     
   ],

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '../../../node_modules/@angular/material';
+import { CampaignService } from '../shared/campaign.service';
+import { UserService } from '../new-user/user.service';
 
 @Component({
   selector: 'app-view-user',
@@ -6,30 +9,53 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-user.component.css']
 })
 export class ViewUserComponent implements OnInit {
-  title ='pro1';
-  userData:any=[
-    {name:"Marcel", email:"mibon@publicis.com",profile:"BI Dev"},
-    {name:"John", email:"john@publicis.com",profile:"Dev"},
-    {name:"Mike", email:"mike@publicis.com",profile:"Tester"},
-    {name:"Anja", email:"anja@publicis.com",profile:"Director"}
+
+  displayedColumns: string[] = [
+    'name',
+    'email',
+    'userType',
+    'password',
+    "functions"
   ];
-  submitForm(name,email,profile) : void{
-    let obj:any={};
-        obj['name']=name;
-        obj['email']=email;
-        obj['profile']=profile;
 
-        console.log(obj);
-  }
-  getCurrentUser(user) : void{
-    console.log(user);
-  }
+  dataSource: MatTableDataSource<any>;
+  allData: Array<any>;
 
-  constructor() { 
-    console.log(this.userData);
-  }
+  constructor(private service: CampaignService, private us: UserService) { }
 
   ngOnInit() {
+    this.setUpTable();
   }
 
+  onentry(entry) {
+    console.log(entry);
+    if(this.allData) {
+      this.allData.push(entry)
+    } else {
+      this.allData = [entry]
+    }
+
+    this.dataSource = new MatTableDataSource(this.allData);
+  }
+
+  setUpTable(){
+    if(this.us.users){
+      this.allData = this.us.users;
+      this.dataSource = new MatTableDataSource(this.allData);
+    }
+
+    
+  }
+
+  deleteElement(element) {
+    console.log(element);
+    this.allData = this.allData.filter(e => e.name !== element.name);
+    this.dataSource = new MatTableDataSource(this.allData);
+  }
+
+
+
+
+
 }
+

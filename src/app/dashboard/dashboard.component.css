@@ -11,3 +11,6 @@ a {
     vertical-align: middle;
     font-size: 24px;
   }
+  .btn-delete{
+    float: right;
+  }

@@ -1,28 +1,41 @@
-
+<p>Logged in as: {{us.currentUser.username}}</p>
 <form [formGroup]="form" class="normal-form" (ngSubmit)="submit()">
-        <a routerLink="/">Go back</a>
+    <div><a routerLink="/dashboard">Campaign data</a></div>
+    <div class="link"><a routerLink="/ViewUser">View User</a></div>
     <div class="row">
         <div class="col">
             <mat-form-field class="example-full-width">
-                <input matInput formControlName="$key" placeholder="name">
+                <input matInput formControlName="name" placeholder="name">
             </mat-form-field>
-            
 
-            
+
+
 
             <mat-form-field class="example-full-width">
                 <input matInput placeholder="email" formControlName="email">
             </mat-form-field>
 
-             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Profile" formControlName="profile">
+            <mat-form-field>
+                <mat-label>User Type</mat-label>
+                <mat-select formControlName="userType">
+                    <mat-option *ngFor="let ut of userType" [value]="ut">
+                        {{ut}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
 
-            <td><button class="btn btn-primary" mat-button color="primary"(click)="getCurrentUser(form.value)">Create User</button></td>
-          <!-- <td> <button type="submit" mat-button color="primary">Submit</button></td>-->
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="password" formControlName="password">
+            </mat-form-field>
 
-             
-           
+            <td>
+                <button class="btn btn-primary" [disabled]="form.invalid" mat-button color="primary" (click)="getCurrentUser(form.value)">Create User</button>
+            </td>
+            <!-- <td> <button type="submit" mat-button color="primary">Submit</button></td>-->
 
 
-        </div>   
+        </div>
+    </div>
+</form>
+
+<p *ngIf="message">{{message}}</p>

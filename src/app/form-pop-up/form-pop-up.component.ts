@@ -24,8 +24,12 @@ export class FormPopUpComponent implements OnInit {
   AdvertiserName: Array<string> = ["toyota_ES", "toyota_BE"];
   PlacementName: Array<string> = ["ES_mobile-in-app_elpais_elpais_social_RON_prospecting_CPC_standard_728x90_010416-150416", "BE_desktop_conde-nast_vogue_display_trueview_retargeting_CPM_rich-media_160x600_160616-010716"];
   CreativeName: Array<string> = ["toyota_ES", "toyota_BE"];
+  Objective: Array<string> = ["lauch", "tactical","retargeting", "always-on","brand","x"];
+  CreativeDelivery: Array<string> = ["dynamic", "rotation","sequential"];
   LaunchDate: Date =null;
   FlightDate: Date =null;
+  minDate = new Date(1990, 0, 1);
+  maxDate = new Date(2020,0,1);
 
   constructor(private fb: FormBuilder) { 
     this.createForm()
@@ -36,32 +40,31 @@ export class FormPopUpComponent implements OnInit {
 
   createForm(){
     this.form = this.fb.group({
-      $key: ["", Validators.required],
-      campaignName: ["", Validators.required],
-      productType: ["", Validators.required],
-      country: ["", Validators.required],
-      Medium: ["", Validators.required],
-      publisher: ["", Validators.required],
-      SiteName: ["", Validators.required],
-    
-      Brand: ["", Validators.required],
-      Objective: ["", Validators.required],
-      Screen: ["", Validators.required],
-      Placement: ["", Validators.required],
-      Targeting: ["", Validators.required],
-      BuyType: ["", Validators.required],
-      BannerType: ["", Validators.required],
-      Message: ["", Validators.required],
-      UnitSize: ["", Validators.required],
-      Language: ["", Validators.required],
-      CallToAction: ["", Validators.required],
-      CreativeDelivery:["", Validators.required],
-      BaseURL:["", Validators.required],
-      AdvertiserName:["", Validators.required],
-      PlacementName:["", Validators.required],
-      CreativeName:["", Validators.required],
-      LaunchDate: ["", Validators.required],
-      FlightDate: ["", Validators.required]
+      $key: ["Publisher"],
+      campaignName: ["Campaign Name"],
+      productType: ["Product Type"],
+      country: ["Country"],
+      Medium: [""],
+      publisher: ["Publisher"],
+      SiteName: ["Site Name"],
+      Brand: [""],
+      Objective: [""],
+      Screen: [""],
+      Placement: [""],
+      Targeting: [""],
+      BuyType: [""],
+      BannerType: [""],
+      Message: ["Message"],
+      UnitSize: [""],
+      Language: [""],
+      CallToAction: ["Call to Action"],
+      CreativeDelivery:[""],
+      BaseURL:[""],
+      AdvertiserName:[""],
+      PlacementName:[""],
+      CreativeName:[""],
+      LaunchDate: [""],
+      FlightDate: [""]
      
     });
   }
